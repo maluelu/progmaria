@@ -1,5 +1,5 @@
 import random
-from words import words
+from palavras import words
 from hangman_visual import lives_visual_dict
 import string
 
@@ -24,14 +24,14 @@ def hangman():
     while len(word_letters) > 0 and lives > 0:
  
     
-        print('You have', lives, 'lives left and you have used these letters: ', ' '.join(used_letters))
+        print('Você tem', lives, 'vidas restantes e você usou essas cartas: ', ' '.join(used_letters))
 
   
         word_list = [letter if letter in used_letters else '-' for letter in word]
         print(lives_visual_dict[lives])
-        print('Current word: ', ' '.join(word_list))
+        print('Palavras Atual: ', ' '.join(word_list))
 
-        user_letter = input('Guess a letter: ').upper()
+        user_letter = input('Adivinhe: ').upper()
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
             if user_letter in word_letters:
@@ -40,20 +40,20 @@ def hangman():
 
             else:
                 lives = lives - 1  # takes away a life if wrong
-                print('\nYour letter,', user_letter, 'is not in the word.')
+                print('\n Sua palavra,', user_letter, 'não está na palavra.')
 
         elif user_letter in used_letters:
-            print('\nYou have already used that letter. Guess another letter.')
+            print('\nVocê já usou essa carta. Adivinhe outra carta.')
 
         else:
-            print('\nThat is not a valid letter.')
+            print('\nEssa não é uma carta válida.')
 
 
     if lives == 0:
         print(lives_visual_dict[lives])
-        print('Parabens', word)
+        print('Parabénsss', word)
     else:
-        print('Perdeum', word, '!!')
+        print('Perdeummm', word, '!!')
 
 
 if __name__ == '__main__':
