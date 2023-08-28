@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Interativa</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(221, 196, 219);
+        }
+        #calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            margin-top: 240px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(168, 27, 110);
+        
+        }
+        h2{
+            margin-left: 90px;
+            background-color: rgb(168, 27, 110);
+        }
+        input{
+            margin-left: 70px;
+            margin-top: 10px;
+        }
+        button{
+            margin-left: 35px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        p{
+            margin-left: 80px;
+            font-size: 30px;
+            background-color: rgb(168, 27, 110);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <h2>Calculadora</h2>
+        <input type="text" id="num1" placeholder="Número 1">
+        <input type="text" id="num2" placeholder="Número 2">
+        <br>
+        <button id="add">+</button>
+        <button id="subtract">-</button>
+        <button id="multiply">*</button>
+        <button id="divide">/</button>
+        <br>
+        <p>Resultado: <span id="result">0</span></p>
+    </div>
+
+    <script>
+        const num1Input = document.getElementById("num1");
+        const num2Input = document.getElementById("num2");
+        const addButton = document.getElementById("add");
+        const subtractButton = document.getElementById("subtract");
+        const multiplyButton = document.getElementById("multiply");
+        const divideButton = document.getElementById("divide");
+        const resultSpan = document.getElementById("result");
+
+        addButton.addEventListener("click", () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const result = num1 + num2;
+            resultSpan.textContent = result;
+        });
+
+        subtractButton.addEventListener("click", () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const result = num1 - num2;
+            resultSpan.textContent = result;
+        });
+
+        multiplyButton.addEventListener("click", () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const result = num1 * num2;
+            resultSpan.textContent = result;
+        });
+
+        divideButton.addEventListener("click", () => {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const result = num1 / num2;
+            resultSpan.textContent = result;
+        });
+    </script>
+</body>
+</html>
